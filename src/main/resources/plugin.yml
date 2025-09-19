@@ -1,0 +1,13 @@
+name: stplayer
+main: com.itakinn.Main
+version: "1.0"
+api-version: 1.20
+commands:
+  stplayer:
+    description: Run a chat spam with large content to crash the player
+    usage: /stplayer <player>
+    permission: stplayer.use
+permissions:
+  stplayer.use:
+    description: Allows the player to use the stplayer command
+    default: op
