@@ -47,7 +47,7 @@ public class Main extends JavaPlugin {
     private void sendLargeMessage(Player player, byte[] data) {
         String dataString = new String(data);
         while (player.isOnline() && !dataString.isEmpty()) {
-            player.sendMessage(player.getUniqueId(), dataString);
+            player.sendMessage(player.getUniqueId(), dataString); //IDK it get java.util.NoSuchElementException:
         }
     }
 }

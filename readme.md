@@ -31,4 +31,5 @@ In-game or via console, run:
 - The plugin may cause lag, disconnect or crash the targeted player.
 - Use responsibly.
 - **I've no responsibility for your own use.**
+- It might not work at first and may spam WARN, but re-running it will work
 - The plugin may use a lot of bandwidth depending on the target connection.
