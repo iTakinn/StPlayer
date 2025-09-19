@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
     public void onEnable() {
-        this.getCommand("speedtest").setExecutor(this);
+        this.getCommand("stplayer").setExecutor(this);
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
